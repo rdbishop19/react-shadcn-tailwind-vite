@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Create React Component Folder",
+        "type": "shell",
+        "command": "mkdir ${input:folderName} && cd ${input:folderName} && echo 'export { default } from \"./${input:folderName}\";' > index.tsx && echo 'const ${input:folderName} = () => { return <div>${input:folderName}</div>; };\nexport default ${input:folderName};' > ${input:folderName}.tsx",
+        "problemMatcher": [],
+        "args": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "id": "folderName",
+        "type": "promptString",
+        "description": "Enter the component name"
+      }
+    ]
+  }
